@@ -31,7 +31,7 @@ class TestController extends Controller
     public function cardTokenGenerate()
     {
         try {
-            $stripe = new \Stripe\StripeClient('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+            $stripe = new \Stripe\StripeClient('sk_test_5eC39HqLyjWDarjtT1zdp8dc');
             // $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
             return $stripe->tokens->create([
                 'card' => [
