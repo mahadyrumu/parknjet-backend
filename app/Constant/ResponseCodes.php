@@ -1,0 +1,31 @@
+<?php
+
+define ("ResponseCode", [
+    "Success" => 200,
+    "Created" => 201,
+    "Bad Request" => 400,
+    "Unauthorized" => 401,
+    "Forbidden" => 403,
+    "Not Found" => 404,
+    "Method Not Allowed" => 405,
+    "Conflict" => 409,
+    "Unprocessable Content" => 422,
+    "User not found in DB." => 1002,
+    "User email verification token not found in DB." => 1003,
+    "User forgot password token not found in DB." => 1004,
+    "User current password is invalid" => 1005,
+    "User request reservation duration exceeds max allowed" => 1006,
+    "DropOff Black Out" => 2000,
+    "PickUp Black Out" => 2001,
+    "STAY Black Out" => 2002,
+    "MIN STAY Black Out" => 2003,
+    "Reservation is already paid" => 3001,
+    "User referred already exists" => 4001,
+    "UserName was already referred" => 4002,
+    "Reservation cannot be cancelled after checked out" => 6,
+    "Reservation cannot be cancelled after checked in" => 7,
+    "Reservation is already cancelled" => 8,
+    "Reservation has no pricing which is unpaid" => 9,
+    "The operation is invalid" => 10,
+]);
+    

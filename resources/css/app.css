@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+[x-cloak] {
+    display: none;
+}
+
+td .edited-color {
+    padding: 20px;
+}
+
+.edited-color {
+    position: relative;
+}
+
+.edited-color:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    display: block;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid rgb(0, 255, 136);
+}
+
+.dataTables_wrapper .dataTables_length select {
+    width: 65px;
+}
+select.appearance-none {
+    background-image: none;
+}
+
+#sign-in-with-apple {
+    padding: 0.625rem!important;
+    border: 1px solid #000!important;
+    font-weight: 600;
+    height: auto!important;
+    font-size: 1rem!important;
+    line-height: 1.5rem;
+    border-radius: 0.5rem!important;
+}
+#sign-in-with-apple:hover {
+    background-color: #0000005f;
+}
+
+@layer utilities {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      @apply appearance-none;
+    }
+  }

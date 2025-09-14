@@ -1,0 +1,97 @@
+pipeline {
+    agent any
+
+    environment {
+        PHP_COMPOSER_IMAGE = "composer:latest"
+        CONTAINER_NAME = "pnjbackend-plg" 
+        WORK_DIR = "/var/www/html/pnjbackend"
+        DEPLOYER_STAGE = "plg"
+    }
+
+    stages {
+        stage('Cleanup Existing Container') {
+            steps {
+                script {
+                    // Remove the existing container if it exists
+                    sh 'docker rm -f ${CONTAINER_NAME} || true'
+                }
+            }
+        }
+        
+        stage('Install Dependencies with Composer') {
+            steps {
+                script {
+                    // Run Composer install
+                    sh '''
+                    docker run --name ${CONTAINER_NAME} \
+                        -u "$(id -u):$(id -g)" \
+                        -v "$(pwd):${WORK_DIR}" \
+                        -w ${WORK_DIR} \
+                        ${PHP_COMPOSER_IMAGE} \
+                        composer install --ignore-platform-reqs || exit 1
+
+                    docker rm -f ${CONTAINER_NAME} || true
+                    '''
+                }
+            }
+        }
+
+        stage('Run Laravel Deployer') {
+            steps {
+                script {
+                    // Run Laravel Deployer
+                    sh '''
+                    docker run --rm \
+                        --name ${CONTAINER_NAME} \
+                        -v "$(pwd):${WORK_DIR}" \
+                        -v ~/.ssh:/root/.ssh \
+                        -w ${WORK_DIR} \
+                        ${PHP_COMPOSER_IMAGE} \
+                        bash -c "
+                            apk add --no-cache rsync && \
+                            vendor/bin/dep deploy:unlock ${DEPLOYER_STAGE} || true && \
+                            vendor/bin/dep deploy ${DEPLOYER_STAGE} || true"
+
+                    docker rm -f ${CONTAINER_NAME} || true
+                    '''
+                }
+            }
+        }
+
+        // stage('Unlock Deployment if Locked') {
+        //     steps {
+        //         script {
+        //             // Check if the deploy is locked and unlock it
+        //             sh '''
+        //             docker run --rm \
+        //                 --name ${CONTAINER_NAME} \
+        //                 -v "$(pwd):${WORK_DIR}" \
+        //                 -v ~/.ssh:/root/.ssh \
+        //                 -w ${WORK_DIR} \
+        //                 ${PHP_COMPOSER_IMAGE} \
+        //                 bash -c " \
+        //                     apk add --no-cache rsync && \
+        //                     vendor/bin/dep deploy ${DEPLOYER_STAGE} || true; \
+        //                     if [ -f ${WORK_DIR}/.dep/deploy.lock ]; then \
+        //                         echo 'Deployment is locked. Unlocking...' && \
+        //                         vendor/bin/dep deploy:unlock ${DEPLOYER_STAGE} && \
+        //                         vendor/bin/dep deploy ${DEPLOYER_STAGE}; \
+        //                     else \
+        //                         echo 'No lock found. Proceeding with deployment...' && \
+        //                         vendor/bin/dep deploy ${DEPLOYER_STAGE}; \
+        //                     fi"
+        //             '''
+        //         }
+        //     }
+        // }
+    }
+
+    post {
+        always {
+            // Ensure no lingering containers in case of failure
+            sh '''
+            docker rm -f ${CONTAINER_NAME} || true
+            '''
+        }
+    }
+}

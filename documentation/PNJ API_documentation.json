@@ -1,0 +1,1105 @@
+{
+	"info": {
+		"_postman_id": "e8031dd6-bee0-460e-8a4f-b5953ff341e3",
+		"name": "PNJ API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "10749616",
+		"_collection_link": "https://interstellar-sunset-52214.postman.co/workspace/techcliqs~fabb8d70-88f0-4c93-82ff-395974c99bdb/collection/10749616-e8031dd6-bee0-460e-8a4f-b5953ff341e3?action=share&source=collection_link&creator=10749616"
+	},
+	"item": [
+		{
+			"name": "Pricing API",
+			"item": [
+				{
+					"name": "Get quotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/b/v1/api/v1.0/quotes?doDate=2024-05-13 12:00 PM&puDate=2024-05-26 12:00 PM&pref=VALET&vehicleLength=STANDARD&lot=LOT_2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"b",
+								"v1",
+								"api",
+								"v1.0",
+								"quotes"
+							],
+							"query": [
+								{
+									"key": "doDate",
+									"value": "2024-05-13 12:00 PM"
+								},
+								{
+									"key": "puDate",
+									"value": "2024-05-26 12:00 PM"
+								},
+								{
+									"key": "pref",
+									"value": "VALET"
+								},
+								{
+									"key": "vehicleLength",
+									"value": "STANDARD"
+								},
+								{
+									"key": "lot",
+									"value": "LOT_2"
+								}
+							]
+						},
+						"description": "### Get Quotes\n\nThis endpoint makes an HTTP GET request to retrieve quotes for a specific date and time, parking preferences, vehicle length, and lot.\n\n#### Request Parameters\n\n- `doDate`: 2024-05-13 12:00 PM\n- `puDate`: 2024-05-26 12:00 PM\n- `pref`: VALET\n- `vehicleLength`: STANDARD\n- `lot`: LOT_2\n    \n\n#### Response\n\nThe response will include a status and data object with various quote details, such as city tax, port fee, currency, lot type, extra fee, and different rates for online, non-online, anonymous, and reference bookings."
+					},
+					"response": [
+						{
+							"name": "Get quotes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/b/v1/api/v1.0/quotes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"b",
+										"v1",
+										"api",
+										"v1.0",
+										"quotes"
+									],
+									"query": [
+										{
+											"key": "doDate",
+											"value": "2024-05-13 12:00 PM",
+											"disabled": true
+										},
+										{
+											"key": "puDate",
+											"value": "2024-05-26 12:00 PM",
+											"disabled": true
+										},
+										{
+											"key": "pref",
+											"value": "VALET",
+											"disabled": true
+										},
+										{
+											"key": "vehicleLength",
+											"value": "STANDARD",
+											"disabled": true
+										},
+										{
+											"key": "lot",
+											"value": "LOT_2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 May 2024 11:15:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"data\": {\n        \"cityTax\": \"3.50\",\n        \"portFee\": \"4.45\",\n        \"currency\": \"USD\",\n        \"lotType\": \"LOT_2\",\n        \"extraFee\": 0,\n        \"online\": {\n            \"averageRate\": 9.68,\n            \"couponDiscountAmount\": 0,\n            \"isAMember\": true,\n            \"paymentType\": \"ONLINE\",\n            \"stateTax\": 13.2,\n            \"extraAmount\": 0,\n            \"subTotal\": 130.68,\n            \"total\": 151.83,\n            \"points\": 1306,\n            \"markUpPercent\": 0,\n            \"walletDays\": 0,\n            \"durationInDay\": 13.5,\n            \"couponCode\": null,\n            \"couponDiscountedDays\": 0,\n            \"savedAmountByBeingMember\": 431.87\n        },\n        \"onlineReference\": {\n            \"averageRate\": 40,\n            \"couponDiscountAmount\": 0,\n            \"isAMember\": true,\n            \"paymentType\": \"ONLINE\",\n            \"stateTax\": 54.54,\n            \"extraAmount\": 0,\n            \"subTotal\": 540,\n            \"total\": 602.49,\n            \"points\": 46331,\n            \"markUpPercent\": 0,\n            \"walletDays\": 0,\n            \"durationInDay\": 13.5,\n            \"couponCode\": null,\n            \"couponDiscountedDays\": 0\n        },\n        \"nonOnline\": {\n            \"averageRate\": 11.13,\n            \"couponDiscountAmount\": 0,\n            \"isAMember\": true,\n            \"paymentType\": \"NOT_ONLINE\",\n            \"stateTax\": 15.18,\n            \"extraAmount\": 19.58,\n            \"subTotal\": 150.26,\n            \"total\": 173.39,\n            \"points\": 1306,\n            \"markUpPercent\": 15,\n            \"walletDays\": 0,\n            \"durationInDay\": 13.5,\n            \"couponCode\": null,\n            \"couponDiscountedDays\": 0\n        },\n        \"nonOnlineReference\": {\n            \"averageRate\": 41.67,\n            \"couponDiscountAmount\": 0,\n            \"isAMember\": true,\n            \"paymentType\": \"NOT_ONLINE\",\n            \"stateTax\": 56.82,\n            \"extraAmount\": 431.87,\n            \"subTotal\": 562.55,\n            \"total\": 627.32,\n            \"points\": 46331,\n            \"markUpPercent\": 15,\n            \"walletDays\": 0,\n            \"durationInDay\": 13.5,\n            \"couponCode\": null,\n            \"couponDiscountedDays\": 0\n        },\n        \"onlineAnon\": {\n            \"averageRate\": 10.65,\n            \"couponDiscountAmount\": 0,\n            \"isAMember\": false,\n            \"paymentType\": \"ONLINE\",\n            \"stateTax\": 14.52,\n            \"extraAmount\": 13.1,\n            \"subTotal\": 143.78,\n            \"total\": 166.25,\n            \"points\": 0,\n            \"markUpPercent\": 10,\n            \"walletDays\": 0,\n            \"durationInDay\": 13.5,\n            \"couponCode\": null,\n            \"couponDiscountedDays\": 0\n        },\n        \"nonOnlineAnon\": {\n            \"averageRate\": 12.24,\n            \"couponDiscountAmount\": 0,\n            \"isAMember\": false,\n            \"paymentType\": \"NOT_ONLINE\",\n            \"stateTax\": 16.69,\n            \"extraAmount\": 34.56,\n            \"subTotal\": 165.24,\n            \"total\": 189.88,\n            \"points\": 0,\n            \"markUpPercent\": 25,\n            \"walletDays\": 0,\n            \"durationInDay\": 13.5,\n            \"couponCode\": null,\n            \"couponDiscountedDays\": 0\n        }\n    }\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/b/v1/api/v1.0/quotes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"b",
+										"v1",
+										"api",
+										"v1.0",
+										"quotes"
+									],
+									"query": [
+										{
+											"key": "doDate",
+											"value": "2024-05-13 12:00 PM",
+											"disabled": true
+										},
+										{
+											"key": "puDate",
+											"value": "2024-05-26 12:00 PM",
+											"disabled": true
+										},
+										{
+											"key": "pref",
+											"value": "VALET",
+											"disabled": true
+										},
+										{
+											"key": "vehicleLength",
+											"value": "STANDARD",
+											"disabled": true
+										},
+										{
+											"key": "lot",
+											"value": "LOT_2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 May 2024 11:18:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": {\n        \"doDate\": [\n            \"The do date field is required.\"\n        ],\n        \"puDate\": [\n            \"The pu date field is required.\"\n        ],\n        \"pref\": [\n            \"The pref field is required.\"\n        ],\n        \"vehicleLength\": [\n            \"The vehicle length field is required.\"\n        ],\n        \"lot\": [\n            \"The lot field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "Create Reservation",
+					"item": [
+						{
+							"name": "Member Reservation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "5|KFGe8gZ5FCRvq8PVePe4sqSykeY91NxaEYzDStF7ae901993"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"doDate\": \"2024-05-13 12:00 PM\",\r\n    \"puDate\": \"2024-05-26 12:00 PM\",\r\n    \"pref\": \"VALET\",\r\n    \"vehicleLength\": \"STANDARD\",\r\n    \"lot\": \"LOT_2\",\r\n    \"vehicleId\": 204347,\r\n    \"makeModel\": \"Honda\",\r\n    \"licensePlate\": \"112233\",\r\n    \"driverId\": 202938,\r\n    \"email\": \"Imran@techcliqs.com\",\r\n    \"fullName\": \"Md. Imran Hadid\",\r\n    \"phone\": \"01122334455\",\r\n    \"stripeToken\": null,\r\n    \"cardId\": null,\r\n    \"paymentDetails\": null,\r\n    \"paxCount\": \"2\",\r\n    \"coupon\": null,\r\n    \"returnFlight\": \"AirAsia777\",\r\n    \"pricing\": {\r\n        \"averageRate\": 11.13,\r\n        \"couponDiscountAmount\": 0,\r\n        \"isAMember\": true,\r\n        \"paymentType\": \"NOT_ONLINE\",\r\n        \"stateTax\": 15.18,\r\n        \"extraAmount\": 19.58,\r\n        \"subTotal\": 150.26,\r\n        \"total\": 173.39,\r\n        \"points\": 1306,\r\n        \"markUpPercent\": 15,\r\n        \"walletDays\": 0,\r\n        \"durationInDay\": 13.5,\r\n        \"couponCode\": null,\r\n        \"couponDiscountedDays\": 0\r\n    },\r\n    \"isRegular\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost/b/v1/api/v1.0/member/reservation",
+								"description": "This API endpoint allows the creation of a reservation for a member. The request should be sent as an HTTP POST to the URL [http://localhost/member/reservation](http://localhost/member/reservation). The request body should be in x-www-form-urlencoded format and include parameters for various reservation details such as doDate, puDate, pref, vehicleLength, lot, vehicleId, makeModel, licensePlate, driverId, email, fullName, phone, stripeToken, cardId, paymentDetails, paxCount, coupon, returnFlight, pricing, and isRegular.\n\nThe response of this request can be documented as a JSON schema to define the structure of the response data."
+							},
+							"response": [
+								{
+									"name": "Member Reservation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"doDate\": \"2024-05-13 12:00 PM\",\r\n    \"puDate\": \"2024-05-26 12:00 PM\",\r\n    \"pref\": \"VALET\",\r\n    \"vehicleLength\": \"STANDARD\",\r\n    \"lot\": \"LOT_2\",\r\n    \"vehicleId\": 204347,\r\n    \"makeModel\": \"Honda\",\r\n    \"licensePlate\": \"112233\",\r\n    \"driverId\": 202935,\r\n    \"email\": \"Imran@techcliqs.com\",\r\n    \"fullName\": \"Md. Imran Hadid\",\r\n    \"phone\": \"01122334455\",\r\n    \"stripeToken\": null,\r\n    \"cardId\": null,\r\n    \"paymentDetails\": null,\r\n    \"paxCount\": \"2\",\r\n    \"coupon\": null,\r\n    \"returnFlight\": \"AirAsia777\",\r\n    \"pricing\": {\r\n        \"averageRate\": 11.13,\r\n        \"couponDiscountAmount\": 0,\r\n        \"isAMember\": true,\r\n        \"paymentType\": \"NOT_ONLINE\",\r\n        \"stateTax\": 15.18,\r\n        \"extraAmount\": 19.58,\r\n        \"subTotal\": 150.26,\r\n        \"total\": 173.39,\r\n        \"points\": 1306,\r\n        \"markUpPercent\": 15,\r\n        \"walletDays\": 0,\r\n        \"durationInDay\": 13.5,\r\n        \"couponCode\": null,\r\n        \"couponDiscountedDays\": 0\r\n    },\r\n    \"isRegular\": false\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost/b/v1/api/v1.0/member/reservation"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.18"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 05:56:45 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"data\": {\n        \"confirmationCode\": 69365,\n        \"dropOffTime\": \"2024-05-13 12:00 PM\",\n        \"isDeleted\": 0,\n        \"lotType\": \"LOT_2\",\n        \"paidTillTime\": \"2024-05-26 12:00 PM\",\n        \"parkingPreference\": \"VALET\",\n        \"paxCount\": \"2\",\n        \"pickUpTime\": \"2024-05-26 12:00 PM\",\n        \"returnAirline\": \"AirAsia777\",\n        \"returnFlightNo\": \"\",\n        \"status\": \"NEW\",\n        \"version\": 0,\n        \"createdBy_id\": 159258,\n        \"driver_id\": 520007,\n        \"owner_id\": 159258,\n        \"vehicle_id\": 520009,\n        \"lastModifiedDate\": \"2024-05-06T05:56:43.000000Z\",\n        \"createdDate\": \"2024-05-06T05:56:43.000000Z\",\n        \"id\": 950293,\n        \"pricingList\": {\n            \"version\": 0,\n            \"averageRate\": 11.13,\n            \"cityTax\": \"3.50\",\n            \"discountAmount\": 0,\n            \"discountSubTotal\": 150.26,\n            \"discountedDay\": 0,\n            \"portFee\": \"4.45\",\n            \"stateTax\": 15.18,\n            \"subTotal\": 150.26,\n            \"total\": 173.39,\n            \"paymentType\": \"NOT_ONLINE\",\n            \"createdBy_id\": 159258,\n            \"reservation_id\": 950293,\n            \"points\": 1306,\n            \"extraFee\": 0,\n            \"lastModifiedDate\": \"2024-05-06T05:56:43.000000Z\",\n            \"createdDate\": \"2024-05-06T05:56:43.000000Z\",\n            \"id\": 1032627\n        },\n        \"pricing\": [\n            {\n                \"id\": 1032627,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-06T05:56:43.000000Z\",\n                \"lastModifiedDate\": \"2024-05-06T05:56:43.000000Z\",\n                \"averageRate\": \"11.13\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"150.26\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"15.18\",\n                \"subTotal\": \"150.26\",\n                \"total\": \"173.39\",\n                \"paymentType\": \"NOT_ONLINE\",\n                \"createdBy_id\": 159258,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950293,\n                \"points\": 1306,\n                \"extraFee\": \"0.00\"\n            },\n            {\n                \"id\": 1032628,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-06T05:56:43.000000Z\",\n                \"lastModifiedDate\": \"2024-05-06T05:56:43.000000Z\",\n                \"averageRate\": \"9.68\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"130.68\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"13.20\",\n                \"subTotal\": \"130.68\",\n                \"total\": \"151.83\",\n                \"paymentType\": \"ONLINE\",\n                \"createdBy_id\": 159258,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950293,\n                \"points\": 1306,\n                \"extraFee\": \"0.00\"\n            }\n        ],\n        \"wallet_transaction\": [],\n        \"pre_paid_wallet_txns\": [],\n        \"driver\": {\n            \"id\": 520007,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"2024-05-06T05:56:43.000000Z\",\n            \"lastModifiedDate\": \"2024-05-06T05:56:43.000000Z\",\n            \"email\": \"Imran@techcliqs.com\",\n            \"full_name\": \"Md. Imran Hadid\",\n            \"phone\": \"01122334455\",\n            \"preferred\": null,\n            \"createdBy_id\": 159258,\n            \"lastModifiedBy_id\": null\n        },\n        \"owner\": {\n            \"id\": 159258,\n            \"created\": \"2024-05-02T08:11:57.000000Z\",\n            \"isDeleted\": 0,\n            \"updated\": \"2024-05-06T05:20:08.000000Z\",\n            \"version\": 1,\n            \"corporateRole\": null,\n            \"full_name\": \"Imran Hadid\",\n            \"isVerified\": null,\n            \"lastLoggedIn\": \"2024-05-06 05:20:08\",\n            \"phone\": null,\n            \"role\": \"ROLE_USER\",\n            \"user_name\": \"imranhadid03@gmail.com\",\n            \"is_apple_auth\": 0,\n            \"is_meta_auth\": 0,\n            \"is_google_auth\": 0,\n            \"email_verified_at\": null,\n            \"corporate_id\": null,\n            \"reward_id\": 0,\n            \"stripeAccount_id\": null,\n            \"verificationToken_id\": null,\n            \"wallet_id\": 0,\n            \"rewardLot1_id\": null,\n            \"walletLot1_id\": null,\n            \"prePaidWalletLot1_id\": null,\n            \"prePaidWalletLot2_id\": null\n        }\n    },\n    \"redirect_url\": \"http://localhost/b/v1/reservation/summary/950293\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Guest Reservation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"doDate\": \"2024-05-13 12:00 PM\",\n    \"puDate\": \"2024-05-26 12:00 PM\",\n    \"pref\": \"VALET\",\n    \"vehicleLength\": \"STANDARD\",\n    \"lot\": \"LOT_2\",\n    \"vehicleId\": null,\n    \"makeModel\": \"Honda\",\n    \"licensePlate\": \"112233\",\n    \"driverId\": null,\n    \"email\": \"Imran@techcliqs.com\",\n    \"fullName\": \"Md. Imran Hadid\",\n    \"phone\": \"01122334455\",\n    \"stripeToken\": null,\n    \"cardId\": null,\n    \"paymentDetails\": null,\n    \"paxCount\": 2,\n    \"coupon\": null,\n    \"returnFlight\": \"AirAsia777\",\n    \"isRegular\": true,\n    \"pricing\": {\n        \"averageRate\": 12.24,\n        \"couponDiscountAmount\": 0,\n        \"isAMember\": false,\n        \"paymentType\":\"NOT_ONLINE\",\n        \"stateTax\": 16.69,\n        \"extraAmount\": 34.56,\n        \"subTotal\": 165.24,\n        \"total\": 189.88,\n        \"points\": 0,\n        \"markUpPercent\": 25,\n        \"walletDays\": 0,\n        \"durationInDay\": 13.5,\n        \"couponCode\": null,\n        \"couponDiscountedDays\": 0\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost/b/v1/api/v1.0/guest/reservation",
+								"description": "This endpoint makes an HTTP POST request to create a guest reservation. The request body should be in raw JSON format and includes parameters such as doDate, puDate, pref, vehicleLength, lot, vehicleId, makeModel, licensePlate, driverId, email, fullName, phone, stripeToken, cardId, paymentDetails, paxCount, coupon, returnFlight, isRegular, and pricing. Upon successful execution, the server responds with a status code of 200 and a JSON object containing a status boolean, confirmationCode, dropOffTime, pickUpTime, returnAirline, status, version, driver details, vehicle details, pricing details, and redirect_url.\n\nExample Response:\n\n``` json\n{\n    \"status\": true,\n    \"data\": {\n        \"confirmationCode\": 0,\n        \"dropOffTime\": \"\",\n        \"isDeleted\": 0,\n        \"lotType\": \"\",\n        \"paidTillTime\": \"\",\n        \"parkingPreference\": \"\",\n        \"paxCount\": 0,\n        \"pickUpTime\": \"\",\n        \"returnAirline\": \"\",\n        \"returnFlightNo\": \"\",\n        \"status\": \"\",\n        \"version\": 0,\n        \"driver_id\": 0,\n        \"vehicle_id\": 0,\n        \"lastModifiedDate\": \"\",\n        \"createdDate\": \"\",\n        \"id\": 0,\n        \"pricingList\": {\n            \"version\": 0,\n            \"averageRate\": 0,\n            \"cityTax\": \"\",\n            \"discountAmount\": 0,\n            \"discountedDay\": 0,\n            \"discountSubTotal\": 0,\n            \"portFee\": \"\",\n            \"stateTax\": 0,\n            \"subTotal\": 0,\n            \"total\": 0,\n            \"paymentType\": \"\",\n            \"reservation_id\": 0,\n            \"extraFee\": 0,\n            \"lastModifiedDate\": \"\",\n            \"createdDate\": \"\",\n            \"id\": 0\n        },\n        \"pricing\": [\n            {\n                \"id\": 0,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"\",\n                \"lastModifiedDate\": \"\",\n                \"averageRate\": \"\",\n                \"cityTax\": \"\",\n                \"discountAmount\": \"\",\n                \"discountSubTotal\": \"\",\n                \"discountedDay\": 0,\n                \"portFee\": \"\",\n                \"stateTax\": \"\",\n                \"subTotal\": \"\",\n                \"total\": \"\",\n                \"paymentType\": \"\",\n                \"createdBy_id\": null,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 0,\n                \"points\": null,\n                \"extraFee\": \"\"\n            }\n        ],\n        \"driver\": {\n            \"id\": 0,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"\",\n            \"lastModifiedDate\": \"\",\n            \"email\": \"\",\n            \"full_name\": \"\",\n            \"phone\": \"\",\n            \"preferred\": null,\n            \"createdBy_id\": null,\n            \"lastModifiedBy_id\": null\n        },\n        \"vehicle\": {\n            \"id\": 0,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"\",\n            \"lastModifiedDate\": \"\",\n            \"makeModel\": \"\",\n            \"nickName\": null,\n            \"plate\": \"\",\n            \"preferred\": null,\n            \"vehicleLength\": \"\",\n            \"createdBy_id\": null,\n            \"lastModifiedBy_id\": null\n        }\n    },\n    \"redirect_url\": \"\"\n}\n\n ```"
+							},
+							"response": [
+								{
+									"name": "Guest Reservation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"doDate\": \"2024-05-13 12:00 PM\",\n    \"puDate\": \"2024-05-26 12:00 PM\",\n    \"pref\": \"VALET\",\n    \"vehicleLength\": \"STANDARD\",\n    \"lot\": \"LOT_2\",\n    \"vehicleId\": null,\n    \"makeModel\": \"Honda\",\n    \"licensePlate\": \"112233\",\n    \"driverId\": null,\n    \"email\": \"Imran@techcliqs.com\",\n    \"fullName\": \"Md. Imran Hadid\",\n    \"phone\": \"01122334455\",\n    \"stripeToken\": null,\n    \"cardId\": null,\n    \"paymentDetails\": null,\n    \"paxCount\": 2,\n    \"coupon\": null,\n    \"returnFlight\": \"AirAsia777\",\n    \"isRegular\": true,\n    \"pricing\": {\n        \"averageRate\": 12.24,\n        \"couponDiscountAmount\": 0,\n        \"isAMember\": false,\n        \"paymentType\":\"NOT_ONLINE\",\n        \"stateTax\": 16.69,\n        \"extraAmount\": 34.56,\n        \"subTotal\": 165.24,\n        \"total\": 189.88,\n        \"points\": 0,\n        \"markUpPercent\": 25,\n        \"walletDays\": 0,\n        \"durationInDay\": 13.5,\n        \"couponCode\": null,\n        \"couponDiscountedDays\": 0\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost/b/v1/api/v1.0/guest/reservation"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.17"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 10:51:22 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"data\": {\n        \"confirmationCode\": 28673,\n        \"dropOffTime\": \"2024-05-13 12:00:00\",\n        \"isDeleted\": 0,\n        \"lotType\": \"LOT_2\",\n        \"paidTillTime\": \"2024-05-26 12:00:00\",\n        \"parkingPreference\": \"VALET\",\n        \"paxCount\": 2,\n        \"pickUpTime\": \"2024-05-26 12:00:00\",\n        \"returnAirline\": \"AirAsia777\",\n        \"returnFlightNo\": \"\",\n        \"status\": \"NEW\",\n        \"version\": 0,\n        \"driver_id\": 130227,\n        \"vehicle_id\": 130224,\n        \"lastModifiedDate\": \"2024-05-06T10:51:21.000000Z\",\n        \"createdDate\": \"2024-05-06T10:51:21.000000Z\",\n        \"id\": 950312,\n        \"pricingList\": {\n            \"version\": 0,\n            \"averageRate\": 12.24,\n            \"cityTax\": \"3.50\",\n            \"discountAmount\": 0,\n            \"discountedDay\": 0,\n            \"discountSubTotal\": 165.24,\n            \"portFee\": \"4.45\",\n            \"stateTax\": 16.69,\n            \"subTotal\": 165.24,\n            \"total\": 189.88,\n            \"paymentType\": \"NOT_ONLINE\",\n            \"reservation_id\": 950312,\n            \"extraFee\": 0,\n            \"lastModifiedDate\": \"2024-05-06T10:51:21.000000Z\",\n            \"createdDate\": \"2024-05-06T10:51:21.000000Z\",\n            \"id\": 256418\n        },\n        \"pricing\": [\n            {\n                \"id\": 256418,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-06T10:51:21.000000Z\",\n                \"lastModifiedDate\": \"2024-05-06T10:51:21.000000Z\",\n                \"averageRate\": \"12.24\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"165.24\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"16.69\",\n                \"subTotal\": \"165.24\",\n                \"total\": \"189.88\",\n                \"paymentType\": \"NOT_ONLINE\",\n                \"createdBy_id\": null,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950312,\n                \"points\": null,\n                \"extraFee\": \"0.00\"\n            },\n            {\n                \"id\": 256419,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-06T10:51:21.000000Z\",\n                \"lastModifiedDate\": \"2024-05-06T10:51:21.000000Z\",\n                \"averageRate\": \"10.65\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"143.78\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"14.52\",\n                \"subTotal\": \"143.78\",\n                \"total\": \"166.25\",\n                \"paymentType\": \"ONLINE\",\n                \"createdBy_id\": null,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950312,\n                \"points\": null,\n                \"extraFee\": \"0.00\"\n            }\n        ],\n        \"driver\": {\n            \"id\": 130227,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"2024-05-06T10:51:20.000000Z\",\n            \"lastModifiedDate\": \"2024-05-06T10:51:20.000000Z\",\n            \"email\": \"Imran@techcliqs.com\",\n            \"full_name\": \"Md. Imran Hadid\",\n            \"phone\": \"01122334455\",\n            \"preferred\": null,\n            \"createdBy_id\": null,\n            \"lastModifiedBy_id\": null\n        },\n        \"vehicle\": {\n            \"id\": 130224,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"2024-05-06T10:51:20.000000Z\",\n            \"lastModifiedDate\": \"2024-05-06T10:51:20.000000Z\",\n            \"makeModel\": \"Honda\",\n            \"nickName\": null,\n            \"plate\": \"112233\",\n            \"preferred\": null,\n            \"vehicleLength\": \"STANDARD\",\n            \"createdBy_id\": null,\n            \"lastModifiedBy_id\": null\n        }\n    },\n    \"redirect_url\": \"http://localhost/b/v1/reservation/summary/950312\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Cancel Reservation",
+					"item": [
+						{
+							"name": "Cancel Member Reservation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "5|KFGe8gZ5FCRvq8PVePe4sqSykeY91NxaEYzDStF7ae901993"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dropOffDate\":\"2024-05-13 12:00 PM\",\r\n    \"driverEmail\":\"Imran@techcliqs.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost/b/v1/api/v1.0/member/reservation/950299/cancel",
+								"description": "### POST /v1/api/v1.0/member/reservation/{reservation_id}/cancel\n\nThis endpoint is used to cancel a specific reservation for a member.\n\n#### Request Body\n\n- `dropOffDate` (string, optional): The date for the drop off.\n- `driverEmail` (string, optional): The email of the driver.\n    \n\n#### Response\n\nUpon successful cancellation, the response will include:\n\n- `status` (boolean): Indicates the status of the cancellation request.\n- `data` (object): Contains detailed information about the cancelled reservation, including the vehicle, driver, pricing, wallet transactions, and owner details.\n- `redirect_url` (string): The URL to redirect the user after the cancellation.\n    \n\nIn case of an error, an appropriate error message will be returned."
+							},
+							"response": [
+								{
+									"name": "Cancel Member Reservation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"dropOffDate\":\"2024-05-13 12:00 PM\",\r\n    \"driverEmail\":\"Imran@techcliqs.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost/b/v1/api/v1.0/member/reservation/950299/cancel"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.17"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 08:57:03 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 950299,\n        \"actualDropOffTime\": null,\n        \"actualPickUpTime\": null,\n        \"claimId\": null,\n        \"confirmationCode\": \"10290\",\n        \"createdDate\": \"2024-05-06T08:56:23.000000Z\",\n        \"dropOffTime\": \"2024-05-13 12:00:00\",\n        \"isDeleted\": 1,\n        \"lastModifiedDate\": \"2024-05-06T08:56:58.000000Z\",\n        \"lotType\": \"LOT_2\",\n        \"paidTillTime\": \"2024-05-26 12:00:00\",\n        \"parkingPreference\": \"VALET\",\n        \"paxCount\": 2,\n        \"pickUpTime\": \"2024-05-26 12:00:00\",\n        \"returnAirline\": \"AirAsia777\",\n        \"returnFlightNo\": \"\",\n        \"status\": \"CANCELLED\",\n        \"version\": 0,\n        \"createdBy_id\": 159258,\n        \"lastModifiedBy_id\": null,\n        \"driver_id\": 520012,\n        \"owner_id\": 159258,\n        \"vehicle_id\": 520014,\n        \"vehicle\": {\n            \"id\": 520014,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"2024-05-06T08:56:23.000000Z\",\n            \"lastModifiedDate\": \"2024-05-06T08:56:23.000000Z\",\n            \"makeModel\": \"Honda\",\n            \"nickName\": null,\n            \"plate\": \"112233\",\n            \"preferred\": null,\n            \"vehicleLength\": \"STANDARD\",\n            \"createdBy_id\": 159258,\n            \"lastModifiedBy_id\": null\n        },\n        \"driver\": {\n            \"id\": 520012,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"2024-05-06T08:56:23.000000Z\",\n            \"lastModifiedDate\": \"2024-05-06T08:56:23.000000Z\",\n            \"email\": \"Imran@techcliqs.com\",\n            \"full_name\": \"Md. Imran Hadid\",\n            \"phone\": \"01122334455\",\n            \"preferred\": null,\n            \"createdBy_id\": 159258,\n            \"lastModifiedBy_id\": null\n        },\n        \"pricing\": [\n            {\n                \"id\": 1032639,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-06T08:56:23.000000Z\",\n                \"lastModifiedDate\": \"2024-05-06T08:56:23.000000Z\",\n                \"averageRate\": \"11.13\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"150.26\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"15.18\",\n                \"subTotal\": \"150.26\",\n                \"total\": \"173.39\",\n                \"paymentType\": \"NOT_ONLINE\",\n                \"createdBy_id\": 159258,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950299,\n                \"points\": 1306,\n                \"extraFee\": \"0.00\",\n                \"payment\": null\n            },\n            {\n                \"id\": 1032640,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-06T08:56:23.000000Z\",\n                \"lastModifiedDate\": \"2024-05-06T08:56:23.000000Z\",\n                \"averageRate\": \"9.68\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"130.68\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"13.20\",\n                \"subTotal\": \"130.68\",\n                \"total\": \"151.83\",\n                \"paymentType\": \"ONLINE\",\n                \"createdBy_id\": 159258,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950299,\n                \"points\": 1306,\n                \"extraFee\": \"0.00\",\n                \"payment\": null\n            }\n        ],\n        \"wallet_transaction\": [],\n        \"pre_paid_wallet_txns\": [],\n        \"owner\": {\n            \"id\": 159258,\n            \"created\": \"2024-05-02T08:11:57.000000Z\",\n            \"isDeleted\": 0,\n            \"updated\": \"2024-05-06T08:56:01.000000Z\",\n            \"version\": 1,\n            \"corporateRole\": null,\n            \"full_name\": \"Imran Hadid\",\n            \"isVerified\": null,\n            \"lastLoggedIn\": \"2024-05-06 08:56:01\",\n            \"phone\": null,\n            \"role\": \"ROLE_USER\",\n            \"user_name\": \"imranhadid03@gmail.com\",\n            \"is_apple_auth\": 0,\n            \"is_meta_auth\": 0,\n            \"is_google_auth\": 0,\n            \"email_verified_at\": null,\n            \"corporate_id\": null,\n            \"reward_id\": 0,\n            \"stripeAccount_id\": null,\n            \"verificationToken_id\": null,\n            \"wallet_id\": 0,\n            \"rewardLot1_id\": null,\n            \"walletLot1_id\": null,\n            \"prePaidWalletLot1_id\": null,\n            \"prePaidWalletLot2_id\": null\n        }\n    },\n    \"redirect_url\": \"http://localhost/b/v1/reservation/summary/950299\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Cancel Guest Reservation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dropOffDate\":\"2024-05-13 12:00 PM\",\r\n    \"driverEmail\":\"Imran@techcliqs.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost/b/v1/api/v1.0/guest/reservation/950292/cancel",
+								"description": "\n### Cancel Guest Reservation\n\nThis endpoint allows the cancellation of a guest reservation.\n\n#### Request Body\n- `dropOffDate` (string, optional): The drop-off date for the reservation.\n- `driverEmail` (string, optional): The email of the driver associated with the reservation.\n\n#### Response\nThe response will be a JSON object with the following properties:\n- `status` (boolean): Indicates the status of the cancellation request.\n- `data` (object): Contains details about the cancelled reservation, including reservation ID, drop-off and pick-up times, driver and vehicle information, pricing details, etc.\n  - `id` (number): The ID of the reservation.\n  - `actualDropOffTime` (string, nullable): The actual drop-off time.\n  - `actualPickUpTime` (string, nullable): The actual pick-up time.\n  - `claimId` (string, nullable): The claim ID.\n  - `confirmationCode` (string): The confirmation code of the reservation.\n  - `createdDate` (string): The date of creation of the reservation.\n  - `dropOffTime` (string): The drop-off time.\n  - `isDeleted` (number): Indicates if the reservation is deleted.\n  - `lastModifiedDate` (string): The date of the last modification.\n  - `lotType` (string): The type of parking lot.\n  - `paidTillTime` (string): The time till which the reservation is paid.\n  - `parkingPreference` (string): The parking preference.\n  - `paxCount` (number): The count of passengers.\n  - `pickUpTime` (string): The pick-up time.\n  - `returnAirline` (string): The return airline.\n  - `returnFlightNo` (string): The return flight number.\n  - `status` (string): The status of the reservation.\n  - `version` (number): The version of the reservation.\n  - `createdBy_id` (number, nullable): The ID of the creator of the reservation.\n  - `lastModifiedBy_id` (number, nullable): The ID of the last modifier of the reservation.\n  - `driver_id` (number): The ID of the driver associated with the reservation.\n  - `vehicle_id` (number): The ID of the vehicle associated with the reservation.\n  - `vehicle` (object): Details of the vehicle associated with the reservation.\n    - `id` (number): The ID of the vehicle.\n    - `isDeleted` (number): Indicates if the vehicle is deleted.\n    - `version` (number): The version of the vehicle.\n    - `createdDate` (string): The date of creation of the vehicle.\n    - `lastModifiedDate` (string): The date of the last modification of the vehicle.\n    - `makeModel` (string): The make and model of the vehicle.\n    - `nickName` (string, nullable): The nickname of the vehicle.\n    - `plate` (string): The plate number of the vehicle.\n    - `preferred` (string, nullable): Indicates if the vehicle is preferred.\n    - `vehicleLength` (string): The length of the vehicle.\n    - `createdBy_id` (number, nullable): The ID of the creator of the vehicle.\n    - `lastModifiedBy_id` (number, nullable): The ID of the last modifier of the vehicle.\n  - `driver` (object): Details of the driver associated with the reservation.\n    - `id` (number): The ID of the driver.\n    - `isDeleted` (number): Indicates if the driver is deleted.\n    - `version` (number): The version of the driver.\n    - `createdDate` (string): The date of creation of the driver.\n    - `lastModifiedDate` (string): The date of the last modification of the driver.\n    - `email` (string): The email of the driver.\n    - `full_name` (string): The full name of the driver.\n    - `phone` (string): The phone number of the driver.\n    - `preferred` (string, nullable): Indicates if the driver is preferred.\n    - `createdBy_id` (number, nullable): The ID of the creator of the driver.\n    - `lastModifiedBy_id` (number, nullable): The ID of the last modifier of the driver.\n  - `pricing` (array): Details of the pricing for the reservation.\n    - `id` (number): The ID of the pricing.\n    - `isDeleted` (number): Indicates if the pricing is deleted.\n    - `version` (number): The version of the pricing.\n    - `createdDate` (string): The date of creation of the pricing.\n    - `lastModifiedDate` (string): The date of the last modification of the pricing.\n    - ... (other pricing details)\n  - `redirect_url` (string): The redirect URL.\n\n"
+							},
+							"response": [
+								{
+									"name": "Cancel Guest Reservation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"dropOffDate\":\"2024-05-13 12:00 PM\",\r\n    \"driverEmail\":\"Imran@techcliqs.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost/b/v1/api/v1.0/guest/reservation/950312/cancel"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.17"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 10:51:38 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 950312,\n        \"actualDropOffTime\": null,\n        \"actualPickUpTime\": null,\n        \"claimId\": null,\n        \"confirmationCode\": \"28673\",\n        \"createdDate\": \"2024-05-06T10:51:21.000000Z\",\n        \"dropOffTime\": \"2024-05-13 12:00:00\",\n        \"isDeleted\": 1,\n        \"lastModifiedDate\": \"2024-05-06T10:51:33.000000Z\",\n        \"lotType\": \"LOT_2\",\n        \"paidTillTime\": \"2024-05-26 12:00:00\",\n        \"parkingPreference\": \"VALET\",\n        \"paxCount\": 2,\n        \"pickUpTime\": \"2024-05-26 12:00:00\",\n        \"returnAirline\": \"AirAsia777\",\n        \"returnFlightNo\": \"\",\n        \"status\": \"CANCELLED\",\n        \"version\": 0,\n        \"createdBy_id\": null,\n        \"lastModifiedBy_id\": null,\n        \"driver_id\": 130227,\n        \"vehicle_id\": 130224,\n        \"vehicle\": {\n            \"id\": 130224,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"2024-05-06T10:51:20.000000Z\",\n            \"lastModifiedDate\": \"2024-05-06T10:51:20.000000Z\",\n            \"makeModel\": \"Honda\",\n            \"nickName\": null,\n            \"plate\": \"112233\",\n            \"preferred\": null,\n            \"vehicleLength\": \"STANDARD\",\n            \"createdBy_id\": null,\n            \"lastModifiedBy_id\": null\n        },\n        \"driver\": {\n            \"id\": 130227,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"2024-05-06T10:51:20.000000Z\",\n            \"lastModifiedDate\": \"2024-05-06T10:51:20.000000Z\",\n            \"email\": \"Imran@techcliqs.com\",\n            \"full_name\": \"Md. Imran Hadid\",\n            \"phone\": \"01122334455\",\n            \"preferred\": null,\n            \"createdBy_id\": null,\n            \"lastModifiedBy_id\": null\n        },\n        \"pricing\": [\n            {\n                \"id\": 256418,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-06T10:51:21.000000Z\",\n                \"lastModifiedDate\": \"2024-05-06T10:51:21.000000Z\",\n                \"averageRate\": \"12.24\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"165.24\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"16.69\",\n                \"subTotal\": \"165.24\",\n                \"total\": \"189.88\",\n                \"paymentType\": \"NOT_ONLINE\",\n                \"createdBy_id\": null,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950312,\n                \"points\": null,\n                \"extraFee\": \"0.00\",\n                \"payment\": null\n            },\n            {\n                \"id\": 256419,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-06T10:51:21.000000Z\",\n                \"lastModifiedDate\": \"2024-05-06T10:51:21.000000Z\",\n                \"averageRate\": \"10.65\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"143.78\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"14.52\",\n                \"subTotal\": \"143.78\",\n                \"total\": \"166.25\",\n                \"paymentType\": \"ONLINE\",\n                \"createdBy_id\": null,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950312,\n                \"points\": null,\n                \"extraFee\": \"0.00\",\n                \"payment\": null\n            }\n        ]\n    },\n    \"redirect_url\": \"http://localhost/b/v1/reservation/summary/950312\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Payment Reservation",
+					"item": [
+						{
+							"name": "Member Payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "10|9i2QtpzhkMhdGuK6ZfSD5VC4Pl1y629OJupyn8lf47ac4972"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 950297,\n    \"stripeToken\": \"tok_1PFZXrLVHO5F5NeW1rQCMqmZ\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost/b/v1/api/v1.0/member/reservation/950297/payment",
+								"description": "The API endpoint makes an HTTP POST request to create a payment for a member's reservation. The request should include the \"reservation id\" and \"stripeToken\" in the raw request body.\n\n### Response\n\nThe response is a JSON object with the following schema:\n\n``` json\n{\n    \"status\": boolean,\n    \"data\": {\n        \"id\": integer,\n        \"actualDropOffTime\": string or null,\n        \"actualPickUpTime\": string or null,\n        \"claimId\": string or null,\n        \"confirmationCode\": string,\n        \"createdDate\": string,\n        \"dropOffTime\": string,\n        \"isDeleted\": integer,\n        \"lastModifiedDate\": string,\n        \"lotType\": string,\n        \"paidTillTime\": string,\n        \"parkingPreference\": string,\n        \"paxCount\": integer,\n        \"pickUpTime\": string,\n        \"returnAirline\": string,\n        \"returnFlightNo\": string,\n        \"status\": string,\n        \"version\": integer,\n        \"createdBy_id\": integer,\n        \"lastModifiedBy_id\": integer or null,\n        \"driver_id\": integer,\n        \"owner_id\": integer,\n        \"vehicle_id\": integer,\n        \"vehicle\": {\n            \"id\": integer,\n            \"isDeleted\": integer,\n            \"version\": integer,\n            \"createdDate\": string,\n            \"lastModifiedDate\": string,\n            \"makeModel\": string,\n            \"nickName\": string or null,\n            \"plate\": string,\n            \"preferred\": string or null,\n            \"vehicleLength\": string,\n            \"createdBy_id\": integer,\n            \"lastModifiedBy_id\": integer or null\n        },\n        \"driver\": {\n            \"id\": integer,\n            \"isDeleted\": integer,\n            \"version\": integer,\n            \"createdDate\": string,\n            \"lastModifiedDate\": string,\n            \"email\": string,\n            \"full_name\": string,\n            \"phone\": string,\n            \"preferred\": string or null,\n            \"createdBy_id\": integer,\n            \"lastModifiedBy_id\": integer or null\n        },\n        \"pricing\": [\n            {\n                \"id\": integer,\n                \"isDeleted\": integer,\n                \"version\": integer,\n                \"createdDate\": string,\n                \"lastModifiedDate\": string,\n                \"averageRate\": string,\n                \"cityTax\": string,\n                \"discountAmount\": string,\n                \"discountSubTotal\": string,\n                \"discountedDay\": integer,\n                \"portFee\": string,\n                \"stateTax\": string,\n                \"subTotal\": string,\n                \"total\": string,\n                \"paymentType\": string,\n                \"createdBy_id\": integer,\n                \"lastModifiedBy_id\": integer or null,\n                \"coupon_id\": string or null,\n                \"lotPayment_id\": string or null,\n                \"payment_id\": string or null,\n                \"reservation_id\": integer,\n                \"points\": integer,\n                \"extraFee\": string,\n                \"payment\": string or null\n            }\n        ],\n        \"owner\": {\n            \"id\": integer,\n            \"created\": string,\n            \"isDeleted\": integer,\n            \"updated\": string,\n            \"version\": integer,\n            \"corporateRole\": string or null,\n            \"full_name\": string,\n            \"isVerified\": boolean or null,\n            \"lastLoggedIn\": string,\n            \"phone\": string or null,\n            \"role\": string,\n            \"user_name\": string,\n            \"is_apple_auth\": integer,\n            \"is_meta_auth\": integer,\n            \"is_google_auth\": integer,\n            \"email_verified_at\": string or null,\n            \"corporate_id\": string or null,\n            \"reward_id\": integer,\n            \"stripeAccount_id\": string or null,\n            \"verificationToken_id\": string or null,\n            \"wallet_id\": integer,\n            \"rewardLot1_id\": string or null,\n            \"walletLot1_id\": string or null,\n            \"prePaidWalletLot1_id\": string or null,\n            \"prePaidWalletLot2_id\": string or null\n        },\n        \"redirect_url\": string\n    }\n}\n\n ```"
+							},
+							"response": [
+								{
+									"name": "Already paid",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": 950296,\n    \"stripeToken\": \"tok_1PFZXrLVHO5F5NeW1rQCMqmZ\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost/b/v1/api/v1.0/member/reservation/950296/payment"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.18"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 12 May 2024 10:53:34 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": false,\n    \"message\": \"Online Payment has already been made for pricing with id = 1032634, Payment id = 457967\"\n}"
+								},
+								{
+									"name": "Member Payment",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": 950297,\n    \"stripeToken\": \"tok_1PFZXrLVHO5F5NeW1rQCMqmZ\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost/b/v1/api/v1.0/member/reservation/950297/payment"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.18"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 12 May 2024 10:54:33 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "60"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 950297,\n        \"actualDropOffTime\": null,\n        \"actualPickUpTime\": null,\n        \"claimId\": null,\n        \"confirmationCode\": \"33918\",\n        \"createdDate\": \"2024-05-12T10:54:00.000000Z\",\n        \"dropOffTime\": \"2024-05-13 12:00:00\",\n        \"isDeleted\": 0,\n        \"lastModifiedDate\": \"2024-05-12T10:54:00.000000Z\",\n        \"lotType\": \"LOT_2\",\n        \"paidTillTime\": \"2024-05-26 12:00:00\",\n        \"parkingPreference\": \"VALET\",\n        \"paxCount\": 2,\n        \"pickUpTime\": \"2024-05-26 12:00:00\",\n        \"returnAirline\": \"AirAsia777\",\n        \"returnFlightNo\": \"\",\n        \"status\": \"NEW\",\n        \"version\": 0,\n        \"createdBy_id\": 159258,\n        \"lastModifiedBy_id\": null,\n        \"driver_id\": 520011,\n        \"owner_id\": 159258,\n        \"vehicle_id\": 520013,\n        \"vehicle\": {\n            \"id\": 520013,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"2024-05-12T10:54:00.000000Z\",\n            \"lastModifiedDate\": \"2024-05-12T10:54:00.000000Z\",\n            \"makeModel\": \"Honda\",\n            \"nickName\": null,\n            \"plate\": \"112233\",\n            \"preferred\": null,\n            \"vehicleLength\": \"STANDARD\",\n            \"createdBy_id\": 159258,\n            \"lastModifiedBy_id\": null\n        },\n        \"driver\": {\n            \"id\": 520011,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"2024-05-12T10:54:00.000000Z\",\n            \"lastModifiedDate\": \"2024-05-12T10:54:00.000000Z\",\n            \"email\": \"Imran@techcliqs.com\",\n            \"full_name\": \"Md. Imran Hadid\",\n            \"phone\": \"01122334455\",\n            \"preferred\": null,\n            \"createdBy_id\": 159258,\n            \"lastModifiedBy_id\": null\n        },\n        \"pricing\": [\n            {\n                \"id\": 1032635,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-12T10:54:00.000000Z\",\n                \"lastModifiedDate\": \"2024-05-12T10:54:00.000000Z\",\n                \"averageRate\": \"11.13\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"150.26\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"15.18\",\n                \"subTotal\": \"150.26\",\n                \"total\": \"173.39\",\n                \"paymentType\": \"NOT_ONLINE\",\n                \"createdBy_id\": 159258,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950297,\n                \"points\": 1306,\n                \"extraFee\": \"0.00\",\n                \"payment\": null\n            },\n            {\n                \"id\": 1032636,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-12T10:54:00.000000Z\",\n                \"lastModifiedDate\": \"2024-05-12T10:54:00.000000Z\",\n                \"averageRate\": \"9.68\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"130.68\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"13.20\",\n                \"subTotal\": \"130.68\",\n                \"total\": \"151.83\",\n                \"paymentType\": \"ONLINE\",\n                \"createdBy_id\": 159258,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950297,\n                \"points\": 1306,\n                \"extraFee\": \"0.00\",\n                \"payment\": null\n            }\n        ],\n        \"owner\": {\n            \"id\": 159258,\n            \"created\": \"2024-05-02T08:11:57.000000Z\",\n            \"isDeleted\": 0,\n            \"updated\": \"2024-05-12T10:28:28.000000Z\",\n            \"version\": 1,\n            \"corporateRole\": null,\n            \"full_name\": \"Imran Hadid\",\n            \"isVerified\": null,\n            \"lastLoggedIn\": \"2024-05-12 10:28:28\",\n            \"phone\": null,\n            \"role\": \"ROLE_USER\",\n            \"user_name\": \"imranhadid03@gmail.com\",\n            \"is_apple_auth\": 0,\n            \"is_meta_auth\": 0,\n            \"is_google_auth\": 0,\n            \"email_verified_at\": null,\n            \"corporate_id\": null,\n            \"reward_id\": 0,\n            \"stripeAccount_id\": null,\n            \"verificationToken_id\": null,\n            \"wallet_id\": 0,\n            \"rewardLot1_id\": null,\n            \"walletLot1_id\": null,\n            \"prePaidWalletLot1_id\": null,\n            \"prePaidWalletLot2_id\": null\n        }\n    },\n    \"redirect_url\": \"http://localhost/b/v1/reservation/summary/950297\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Guest Payment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 950298,\n    \"stripeToken\": \"tok_1PFZXrLVHO5F5NeW1rQCMqmZ\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost/b/v1/api/v1.0/guest/reservation/950297/payment",
+								"description": "The API endpoint makes an HTTP POST request to create a payment for a guest reservation. The request should include the \"reservation id\" and \"stripeToken\" parameters in the raw request body.\n\n### Response\n\nThe response to this request is in JSON format with a status code of 200. Below is an example of the response JSON schema:\n\n``` json\n{\n    \"status\": \"boolean\",\n    \"data\": {\n        \"id\": \"number\",\n        \"actualDropOffTime\": \"string or null\",\n        \"actualPickUpTime\": \"string or null\",\n        \"claimId\": \"string or null\",\n        \"confirmationCode\": \"string\",\n        \"createdDate\": \"string\",\n        \"dropOffTime\": \"string\",\n        \"isDeleted\": \"number\",\n        \"lastModifiedDate\": \"string\",\n        \"lotType\": \"string\",\n        \"paidTillTime\": \"string\",\n        \"parkingPreference\": \"string\",\n        \"paxCount\": \"number\",\n        \"pickUpTime\": \"string\",\n        \"returnAirline\": \"string\",\n        \"returnFlightNo\": \"string\",\n        \"status\": \"string\",\n        \"version\": \"number\",\n        \"createdBy_id\": \"string or null\",\n        \"lastModifiedBy_id\": \"string or null\",\n        \"driver_id\": \"number\",\n        \"vehicle_id\": \"number\",\n        \"vehicle\": {\n            \"id\": \"number\",\n            \"isDeleted\": \"number\",\n            \"version\": \"number\",\n            \"createdDate\": \"string\",\n            \"lastModifiedDate\": \"string\",\n            \"makeModel\": \"string\",\n            \"nickName\": \"string or null\",\n            \"plate\": \"string\",\n            \"preferred\": \"string or null\",\n            \"vehicleLength\": \"string\",\n            \"createdBy_id\": \"string or null\",\n            \"lastModifiedBy_id\": \"string or null\"\n        },\n        \"driver\": {\n            \"id\": \"number\",\n            \"isDeleted\": \"number\",\n            \"version\": \"number\",\n            \"createdDate\": \"string\",\n            \"lastModifiedDate\": \"string\",\n            \"email\": \"string\",\n            \"full_name\": \"string\",\n            \"phone\": \"string\",\n            \"preferred\": \"string or null\",\n            \"createdBy_id\": \"string or null\",\n            \"lastModifiedBy_id\": \"string or null\"\n        },\n        \"pricing\": [\n            {\n                \"id\": \"number\",\n                \"isDeleted\": \"number\",\n                \"version\": \"number\",\n                \"createdDate\": \"string\",\n                \"lastModifiedDate\": \"string\",\n                \"averageRate\": \"string\",\n                \"cityTax\": \"string\",\n                \"discountAmount\": \"string\",\n                \"discountSubTotal\": \"string\",\n                \"discountedDay\": \"number\",\n                \"portFee\": \"string\",\n                \"stateTax\": \"string\",\n                \"subTotal\": \"string\",\n                \"total\": \"string\",\n                \"paymentType\": \"string\",\n                \"createdBy_id\": \"string or null\",\n                \"lastModifiedBy_id\": \"string or null\",\n                \"coupon_id\": \"string or null\",\n                \"lotPayment_id\": \"string or null\",\n                \"payment_id\": \"string or null\",\n                \"reservation_id\": \"number\",\n                \"points\": \"string or null\",\n                \"extraFee\": \"string\",\n                \"payment\": \"string or null\"\n            }\n        ],\n        \"redirect_url\": \"string\"\n    }\n}\n\n ```"
+							},
+							"response": [
+								{
+									"name": "Guest Payment",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": 950296,\n    \"stripeToken\": \"tok_1PFZXrLVHO5F5NeW1rQCMqmZ\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost/b/v1/api/v1.0/guest/reservation/950296/payment"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.18"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 12 May 2024 11:24:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 950296,\n        \"actualDropOffTime\": null,\n        \"actualPickUpTime\": null,\n        \"claimId\": null,\n        \"confirmationCode\": \"90939\",\n        \"createdDate\": \"2024-05-12T10:59:59.000000Z\",\n        \"dropOffTime\": \"2024-05-13 12:00:00\",\n        \"isDeleted\": 0,\n        \"lastModifiedDate\": \"2024-05-12T10:59:59.000000Z\",\n        \"lotType\": \"LOT_2\",\n        \"paidTillTime\": \"2024-05-26 12:00:00\",\n        \"parkingPreference\": \"VALET\",\n        \"paxCount\": 2,\n        \"pickUpTime\": \"2024-05-26 12:00:00\",\n        \"returnAirline\": \"AirAsia777\",\n        \"returnFlightNo\": \"\",\n        \"status\": \"NEW\",\n        \"version\": 0,\n        \"createdBy_id\": null,\n        \"lastModifiedBy_id\": null,\n        \"driver_id\": 130211,\n        \"vehicle_id\": 130208,\n        \"vehicle\": {\n            \"id\": 130208,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"2024-05-12T10:59:59.000000Z\",\n            \"lastModifiedDate\": \"2024-05-12T10:59:59.000000Z\",\n            \"makeModel\": \"Honda\",\n            \"nickName\": null,\n            \"plate\": \"112233\",\n            \"preferred\": null,\n            \"vehicleLength\": \"STANDARD\",\n            \"createdBy_id\": null,\n            \"lastModifiedBy_id\": null\n        },\n        \"driver\": {\n            \"id\": 130211,\n            \"isDeleted\": 0,\n            \"version\": 0,\n            \"createdDate\": \"2024-05-12T10:59:59.000000Z\",\n            \"lastModifiedDate\": \"2024-05-12T10:59:59.000000Z\",\n            \"email\": \"Imran@techcliqs.com\",\n            \"full_name\": \"Md. Imran Hadid\",\n            \"phone\": \"01122334455\",\n            \"preferred\": null,\n            \"createdBy_id\": null,\n            \"lastModifiedBy_id\": null\n        },\n        \"pricing\": [\n            {\n                \"id\": 256386,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-12T10:59:59.000000Z\",\n                \"lastModifiedDate\": \"2024-05-12T10:59:59.000000Z\",\n                \"averageRate\": \"12.24\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"165.24\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"16.69\",\n                \"subTotal\": \"165.24\",\n                \"total\": \"189.88\",\n                \"paymentType\": \"NOT_ONLINE\",\n                \"createdBy_id\": null,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950296,\n                \"points\": null,\n                \"extraFee\": \"0.00\",\n                \"payment\": null\n            },\n            {\n                \"id\": 256387,\n                \"isDeleted\": 0,\n                \"version\": 0,\n                \"createdDate\": \"2024-05-12T10:59:59.000000Z\",\n                \"lastModifiedDate\": \"2024-05-12T10:59:59.000000Z\",\n                \"averageRate\": \"10.65\",\n                \"cityTax\": \"3.50\",\n                \"discountAmount\": \"0.00\",\n                \"discountSubTotal\": \"143.78\",\n                \"discountedDay\": 0,\n                \"portFee\": \"4.45\",\n                \"stateTax\": \"14.52\",\n                \"subTotal\": \"143.78\",\n                \"total\": \"166.25\",\n                \"paymentType\": \"ONLINE\",\n                \"createdBy_id\": null,\n                \"lastModifiedBy_id\": null,\n                \"coupon_id\": null,\n                \"lotPayment_id\": null,\n                \"payment_id\": null,\n                \"reservation_id\": 950296,\n                \"points\": null,\n                \"extraFee\": \"0.00\",\n                \"payment\": null\n            }\n        ]\n    },\n    \"redirect_url\": \"http://localhost/b/v1/reservation/summary/950296\"\n}"
+								},
+								{
+									"name": "Already paid",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": 950298,\n    \"stripeToken\": \"tok_1PFZXrLVHO5F5NeW1rQCMqmZ\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost/b/v1/api/v1.0/guest/reservation/950297/payment"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.18"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 12 May 2024 11:50:04 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": false,\n    \"message\": \"Online Payment has already been made for pricing with id = 256391 , Payment id = 95801\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"imranhadid03@gmail.com\",\r\n    \"password\":\"imranhadid03@gmail.com\",\r\n    \"client\":\"mobile\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost/b/v1/api/v1.0/user/signin",
+						"description": "\nThis HTTP POST request is used to sign in a user. The request should include the user's email, password, and client information in the request body. The response will include a success status indicating if the sign-in was successful, a token for authentication, and the user's ID.\n\n### Request Body\n- email (string): The user's email.\n- password (string): The user's password.\n- client (string): The client information.\n\n### Response\n- success (boolean): Indicates if the sign-in was successful.\n- token (string): Authentication token for the user.\n- user_id (integer): The ID of the signed-in user.\n"
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "imranhadid03@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "imranhadid03@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost/user/signin"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 May 2024 08:39:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"token\": \"1|QV0IMBGjjk3y4Vr50iHEG4XDTHvhgdtSV0WNzLdjd58acefa\",\n    \"user_id\": 159258\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Twilio",
+			"item": [
+				{
+					"name": "SMS",
+					"item": [
+						{
+							"name": "sms-pickup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://plg.parknjetseatac.com/b/v1/twilio/sms?From=11111111&Body=70668*1a*6",
+									"protocol": "https",
+									"host": [
+										"plg",
+										"parknjetseatac",
+										"com"
+									],
+									"path": [
+										"b",
+										"v1",
+										"twilio",
+										"sms"
+									],
+									"query": [
+										{
+											"key": "From",
+											"value": "11111111"
+										},
+										{
+											"key": "Body",
+											"value": "70668*1a*6"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Phone",
+					"item": [
+						{
+							"name": "Geetings",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://plg.parknjetseatac.com/b/v1/twilio/call/greet?From=1111&Digits=1",
+									"protocol": "https",
+									"host": [
+										"plg",
+										"parknjetseatac",
+										"com"
+									],
+									"path": [
+										"b",
+										"v1",
+										"twilio",
+										"call",
+										"greet"
+									],
+									"query": [
+										{
+											"key": "From",
+											"value": "1111"
+										},
+										{
+											"key": "Digits",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Dispatch Menu",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/v1/api/twilio/call/dispatch_menu/1?Digits=12345",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"v1",
+										"api",
+										"twilio",
+										"call",
+										"dispatch_menu",
+										"1"
+									],
+									"query": [
+										{
+											"key": "Digits",
+											"value": "12345"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Confirm ClaimID",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": "http://localhost/v1/api/twilio/call/confirm_claimid"
+							},
+							"response": []
+						},
+						{
+							"name": "Choose Island",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/v1/api/twilio/call/choose_island?Digits=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"v1",
+										"api",
+										"twilio",
+										"call",
+										"choose_island"
+									],
+									"query": [
+										{
+											"key": "Digits",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Choose Delay",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/v1/api/twilio/call/choose_delay?Digits=7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"v1",
+										"api",
+										"twilio",
+										"call",
+										"choose_delay"
+									],
+									"query": [
+										{
+											"key": "Digits",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
